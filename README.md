@@ -1,2 +1,5 @@
 # JavaScript-certification
-For Java Script  Certificate
+For JavaScript  Certificate.
+FreeCodeCamp JavaScript Certification Repository.
+
+JavaScript Algorithms and Data Structures
