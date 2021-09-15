@@ -9,4 +9,4 @@ function solution(number) {
     return x
   }
 
-console.log(solution(10))
+console.log(solution())

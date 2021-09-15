@@ -1,36 +1,54 @@
-// Setup
-var recordCollection = {
-  2548: {
-    albumTitle: 'Slippery When Wet',
-    artist: 'Bon Jovi',
-    tracks: ['Let It Rock', 'You Give Love a Bad Name']
-  },
-  2468: {
-    albumTitle: '1999',
-    artist: 'Prince',
-    tracks: ['1999', 'Little Red Corvette']
-  },
-  1245: {
-    artist: 'Robert Palmer',
-    tracks: []
-  },
-  5439: {
-    albumTitle: 'ABBA Gold'
-  }
-};
+var contacts = [
+    {
+        "firstName": "Akira",
+        "lastName": "Laine",
+        "number": "0543236543",
+        "likes": ["Pizza", "Coding", "Brownie Points"]
+    },
+    {
+        "firstName": "Harry",
+        "lastName": "Potter",
+        "number": "0994372684",
+        "likes": ["Hogwarts", "Magic", "Hagrid"]
+    },
+    {
+        "firstName": "Sherlock",
+        "lastName": "Holmes",
+        "number": "0487345643",
+        "likes": ["Intriguing Cases", "Violin"]
+    },
+    {
+        "firstName": "Kristian",
+        "lastName": "Vos",
+        "number": "unknown",
+        "likes": ["JavaScript", "Gaming", "Foxes"]
+    }
+];
 
-// Only change code below this line
-function updateRecords(records, id, prop, value) {
-  if (prop !== 'tracks' && value !== "") {
-    records[id][prop] = value;
-  } else if (prop === "tracks" && records[id].hasOwnProperty("tracks") === false) {
-    records[id][prop] = [value];
-  } else if (prop === "tracks" && value !== "") {
-    records[id][prop].push(value);
-  } else if (value === "") {
-    delete records[id][prop];
-  }
-  return records;
+
+function lookUpProfile(name, prop) {
+  // Only change code below this line
+    var out = ""
+    for(let i = 0; i < contacts.length; i++) {
+        console.log(i, contacts.length)
+        if (contacts[i]['firstName'] === name) {
+            if (contacts[i].hasOwnProperty(prop) === true) {
+                out =  contacts[i][prop]
+                break
+                }
+            else {
+                out =  "No such property"
+                break
+            }
+        }
+        else {
+            out =  "No such contact"
+        }
+    }
+    return out
 }
+  // Only change code above this line
 
-updateRecords(recordCollection, 5439, 'artist', 'ABBA');
+
+console.log(lookUpProfile("Kristian", "lastName"));
+console.log(lookUpProfile("Sherlock", "likes"));
