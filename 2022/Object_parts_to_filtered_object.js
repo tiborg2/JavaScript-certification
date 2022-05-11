@@ -118,8 +118,4 @@ const filteredList = watchList
     rating: movie["imdbRating"]
   }));
 
-  console.log(filteredList);
-
-// Only change code above this line
-
 console.log(filteredList);
